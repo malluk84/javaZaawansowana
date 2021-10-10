@@ -62,4 +62,18 @@ public enum Bilet {
 
         return odpowiedniBilet;
     }
+
+    public static void printValues() {
+        Bilet[] bilety = values();
+
+
+        for (int i = 0; i < bilety.length; i++) {
+
+        }
+
+        for (Bilet bilet : bilety) {
+
+        }
+    }
+
 }
