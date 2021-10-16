@@ -4,8 +4,8 @@ public class DogRange {
 
         String test = "test";
 
-        Dog burek = new Dog("burek", "black");
-        Dog azor = new Dog("azor", "brown");
+        Dog burek = new Dog("burek");
+        Dog azor = new Dog("azor");
 
 
         //System.out.println(Dog.getDogCount());

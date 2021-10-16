@@ -1,10 +1,10 @@
+import java.util.Objects;
+
 public class Dog {
     private String name;
-    private final String color;
 
-    public Dog(String name, String color) {
+    public Dog(String name) {
         this.name = name;
-        this.color = color;
     }
 
     public void woof() {
@@ -19,15 +19,23 @@ public class Dog {
         this.name = name;
     }
 
-    public String getColor() {
-        return color;
-    }
-
     @Override
     public String toString() {
         return "Dog{" +
                 "name='" + name + '\'' +
-                ", color='" + color + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Dog)) return false;
+        Dog dog = (Dog) o;
+        return Objects.equals(name, dog.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

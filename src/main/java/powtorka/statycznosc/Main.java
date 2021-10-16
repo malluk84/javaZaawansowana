@@ -6,7 +6,7 @@ public class Main {
 
         Dog.jakaJestesKlasa();
 
-        Dog burek = new Dog();
+        Dog burek = new Dog(1);
         burek.hau();
 
         System.out.println();
