@@ -7,7 +7,7 @@ public class Library {
         this.copies = copies;
     }
 
-    public Copy[] findByTitle(String title) {
+    public Copy[] findByTitle(String title) throws NoBookFoundException {
         if (title != null) {
             int counterOfFoundBooks = 0;
             for (Copy copy : copies) {
@@ -21,7 +21,11 @@ public class Library {
                     foundBooks[--counterOfFoundBooks] = copies[i];
                 }
             }
+            if (foundBooks.length == 0) {
+                throw new NoBookFoundException();
+            }
             return foundBooks;
+
         }
         return null;
     }

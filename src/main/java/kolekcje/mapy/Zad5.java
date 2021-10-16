@@ -8,6 +8,7 @@ public class Zad5 {
         Scanner scanner = new Scanner(System.in);
         String wczytany = scanner.nextLine();
 
+
         List<Map.Entry<String, Integer>> listaWpisow = new ArrayList<>(zliczWystapieniaSlow(wczytany).entrySet());
 
         listaWpisow.sort(Map.Entry.comparingByValue());

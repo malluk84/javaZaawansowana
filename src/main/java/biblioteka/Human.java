@@ -1,5 +1,7 @@
 package biblioteka;
 
+import wyjatki.IllegalSurnameException;
+
 import java.util.Objects;
 
 public abstract class Human {
@@ -8,6 +10,9 @@ public abstract class Human {
     protected String surname;
 
     public Human(String name, String surname) {
+        if (surname == null || surname.charAt(0) != surname.toUpperCase().charAt(0)) {
+            throw new IllegalSurnameException(surname);
+        }
         this.name = name;
         this.surname = surname;
     }
