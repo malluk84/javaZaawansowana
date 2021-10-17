@@ -12,4 +12,13 @@ public class Student {
     private int age;
     private double average;
 
+    /*
+    Stworzyc klase Student
+    Stworzyc liste paru studentow (ofc w innej klasie)
+    Posortowac ich wg. malejcacej sredniej
+    Wypisac liste
+    Posortowac ich wg. rosnacej dlugosci nazwiska
+    Wypisac liste
+     */
+
 }
