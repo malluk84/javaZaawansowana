@@ -1,4 +1,4 @@
-package funkcyjne;
+package programowaniefunkcyjne;
 
 import java.util.Comparator;
 

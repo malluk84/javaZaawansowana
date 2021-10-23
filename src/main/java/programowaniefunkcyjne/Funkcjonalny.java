@@ -1,4 +1,4 @@
-package funkcyjne;
+package programowaniefunkcyjne;
 
 @FunctionalInterface
 public interface Funkcjonalny {

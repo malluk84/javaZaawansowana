@@ -25,6 +25,12 @@ public class Main {
                 return -1 * Double.compare(o1.getAverage(), o2.getAverage());
             }
         });
+        Comparator<Student> comparator = (o1, o2) -> Double.compare(o1.getAverage(), o2.getAverage());
+        Collections.sort(students, Comparator.comparingDouble(o -> o.getAverage()));
+        Collections.sort(students, Comparator.comparingDouble(Student::getAverage));
+
+        Collections.sort(students, Comparator.comparingInt(o -> o.getSurname().length()));
+
         System.out.println("Po sortowaniu po sredniej (malejaco)");
         System.out.println(students);
 
