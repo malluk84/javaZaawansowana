@@ -50,20 +50,32 @@ public class VideoService {
             .map(v -> v.titlel)
             .collect(Collectors.toList());
 
+    public List<String> episodeNames = seasons.stream()
+            .flatMap(e -> e.episodes.stream())
+            .map(e -> e.episodeName)
+            .collect(Collectors.toList());
+
+    public List<Integer> episodeNumbers = seasons.stream()
+            .flatMap(e -> e.episodes.stream())
+            .map(e -> e.episodeNumber)
+            .collect(Collectors.toList());
+
     public List<String> videoUrls = seasons.stream()
             .flatMap(s -> season.episodes.stream())
             .flatMap(e -> e.videos.stream())
             .map(v -> v.url)
             .collect(Collectors.toList());
 
-    public List<Episode> evenEpisodes = seasons.stream()
+    public List<Episode> episodesFromEvenSeasons = seasons.stream()
+            .filter(s -> s.seasonNumber % 2 == 0)
             .flatMap(s -> season.episodes.stream())
-            .filter(e -> e.episodeNumber % 2 == 0)
             .collect(Collectors.toList());
 
-    public List<Season> evenSeasons = seasons.stream()
-            .filter(e -> e.seasonNumber % 2 == 0)
-            .collect(Collectors.toList());
+    /*public List<Video> videoFromEvenSeasons = seasons.stream()
+            .filter(s -> s.seasonNumber % 2 == 0)
+            .flatMap(s -> season.episodes.stream())
+            .map(v -> videoNames)
+            .collect(Collectors.toList());*/
 
     public List<Episode> evenEpisodesFromEvenSeasons = seasons.stream()
             .filter(s -> s.seasonNumber % 2 == 0)
@@ -72,7 +84,7 @@ public class VideoService {
             .collect(Collectors.toList());
 
     public List<Video> clipVideoFormEvenEpisodeFromOddSeasons = seasons.stream()
-            .filter(s -> s.seasonNumber % 2 == 0)
+            .filter(s -> s.seasonNumber % 2 != 0)
             .flatMap(s -> season.episodes.stream())
             .filter(e -> e.episodeNumber % 2 == 0)
             .flatMap(e -> e.videos.stream())
